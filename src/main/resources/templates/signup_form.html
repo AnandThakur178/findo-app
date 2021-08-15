@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Sign Up - CodeJava</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+	<a class="navbar-brand" href="#" style="margin-left: 100px">Findo</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-right: 50px">
+		<ul class="navbar-nav ml-auto" >
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					User
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" th:href="@{/log}">Signin</a>
+					<a class="dropdown-item" th:href="@{/register}">Signup</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+</nav>
+<div class="container text-center" style="margin-top: 100px">
+	<div class="card">
+		<h1 class="card-header bg-secondary">User Registration - Sign Up</h1>
+
+		<form th:action="@{/process_register}" th:object="${user}"
+			  method="post" style="max-width: 600px; margin: 0 auto;">
+			<div class="m-3">
+				<div class="form-group row">
+					<label class="col-4 col-form-label">E-mail</label>
+					<div class="col-8">
+						<input type="email" th:field="*{email}" class="form-control" required />
+					</div>
+				</div>
+				<ul class="card-body ">
+					<div class="form-group row">
+						<label class="col-4 col-form-label">Password </label>
+						<div class="col-8">
+							<input type="password" th:field="*{password}" class="form-control"
+								   required minlength="6" maxlength="10"/>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-4 col-form-label">First Name</label>
+						<div class="col-8">
+							<input type="text" th:field="*{firstName}" class="form-control"
+								   required minlength="2" maxlength="20"/>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-4 col-form-label">Last Name</label>
+						<div class="col-8">
+							<input type="text" th:field="*{lastName}" class="form-control"
+								   required />
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-4 col-form-label">Contact</label>
+						<div class="col-8">
+							<input type="number" th:field="*{contact}" class="form-control"
+								   required minlength="10" maxlength="10"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-4 col-form-label">Anonymous</label>
+						<div class="col-8">
+							<input type="text" th:field="*{anonymous}" class="form-control"
+								   required minlength="3" maxlength="50"/>
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-4 col-form-label">Address</label>
+						<div class="col-8">
+							<input type="text" th:field="*{address}" class="form-control"
+								   required minlength="2" maxlength="50"/>
+						</div>
+					</div>
+
+					<div>
+						<button type="submit" class="btn btn-primary">Sign Up</button>
+					</div>
+
+		</form>
+	</div>
+</div>
+</body>
+</html>

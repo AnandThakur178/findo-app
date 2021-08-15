@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome to Home</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+	<a class="navbar-brand" href="#" style="margin-left:100px">Findo</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-right: 100px">
+		<ul class="navbar-nav ml-auto" >
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/users}">Manager</a>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					User
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" th:href="@{/log}">Signin</a>
+					<a class="dropdown-item" th:href="@{/register}">Signup</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+</nav>
+<div class="container text-center">
+	<h1>Findo FundRaising Platform</h1>
+	<div class="container">
+		<div class="card mt-3">
+			<h5 class="card-header">Medical</h5>
+			<div class="card-body">
+				<h5 class="card-title">Need help for treatment</h5>
+				<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens.</p>
+				<a href="#" class="btn btn-primary"> Donate</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="card mt-3">
+			<h5 class="card-header">Education</h5>
+			<div class="card-body">
+				<h5 class="card-title">Education for poor children</h5>
+				<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens.</p>
+				<a href="#" class="btn btn-primary"> Donate</a>
+			</div>
+		</div>
+
+		<form class="container-fluid">
+			<div class="card mt-3">
+				<h5 class="card-header">Family</h5>
+				<div class="card-body">
+					<h5 class="card-title">Financial help for poor</h5>
+					<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens..</p>
+					<a href="#" class="btn btn-primary"> Donate</a>
+				</div>
+			</div>
+
+			<div class="container-fluid">
+				<div class="card mt-3">
+					<h5 class="card-header">Drought</h5>
+					<div class="card-body">
+						<h5 class="card-title">Relief for drought-affected</h5>
+						<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens..</p>
+						<a href="#" class="btn btn-primary"> Donate</a>
+					</div>
+				</div>
+			</div>
+	</div>
+
+</body>
+</html>

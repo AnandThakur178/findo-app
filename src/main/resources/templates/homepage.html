@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome to CodeJava Home</title>
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+	<a class="navbar-brand" href="#" style="margin-left: 100px">Findo</a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNavDropdown" style="margin-right: 100px">
+		<ul class="navbar-nav ml-auto" >
+			<li class="nav-item active">
+				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link">Donations</a>
+			</li>
+
+		</ul>
+	</div>
+
+</nav>
+<div class="container text-center">
+	<div>
+		<form class="mt-5" th:action="@{/logout}" method="post">
+
+			Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+
+			<input type="submit" style="margin-left: 700px" value="Sign Out" />
+		</form>
+	</div>
+</div>
+<!--<form th:action="@{/process_register}" th:object="${user}"-->
+<!--	  method="post" style="max-width: 600px; margin: 0 auto;">-->
+<div class="container">
+	<div class="card mt-3">
+		<h5 class="card-header">Medical</h5>
+		<div class="card-body">
+			<h5 class="card-title">Need help for treatment</h5>
+			<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens.</p>
+			<form>
+				<input type="number"  placeholder="$100" class="mt-1" required><br><br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					Donate
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="card mt-3">
+		<h5 class="card-header">Education</h5>
+		<div class="card-body">
+			<h5 class="card-title">Education for poor children</h5>
+			<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens.</p>
+			<input type="number" placeholder="$100" class="mt-1"><br><br>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+				Donate
+			</button>
+		</div>
+	</div>
+
+	<form class="container-fluid">
+		<div class="card mt-3">
+			<h5 class="card-header">Family</h5>
+			<div class="card-body">
+				<h5 class="card-title">Financial help for poor</h5>
+				<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens..</p>
+				<input type="number" placeholder="$100" class="mt-1"><br><br>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+					Donate
+				</button>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="card mt-3">
+				<h5 class="card-header">Drought</h5>
+				<div class="card-body">
+					<h5 class="card-title">Relief for drought-affected</h5>
+					<p class="card-text">We exists for non profits,social enterprises,activities, Lorem politicians and individual citizens..</p>
+					<input type="number" placeholder="$100" class="mt-1"><br><br>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						Donate
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Thank You..</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						Donated Succesfully..
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+</body>
+</html>
